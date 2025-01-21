@@ -1,7 +1,7 @@
 import 'dart:convert';
-
 import 'package:employees_details/models/employee.dart';
 import 'package:employees_details/services/employee_service.dart';
+import 'package:employees_details/views/employee_details.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -54,13 +54,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ListView.builder(
             itemCount: employees.length,
             itemBuilder: (BuildContext context, int index) {
-              return ListTile(
-                leading: Icon(Icons.person),
-                title: Column(
-                  children: [
-                    Text("Name : ${employees[index].employeeName}"),
-                    Text("Salary : ${employees[index].employeeSalary}")
-                  ],
+              return InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => EmpDetails(empData: employees[index]))
+                  );
+                },
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Column(
+                    children: [
+                      Text("Name : ${employees[index].employeeName}"),
+                      Text("Salary : ${employees[index].employeeSalary}")
+                    ],
+                  ),
                 ),
               );
             }

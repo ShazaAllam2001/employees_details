@@ -7,7 +7,7 @@ String employeeToJson(Employee data) => json.encode(data.toJson());
 class Employee {
     int id;
     String employeeName;
-    int employeeSalary;
+    double employeeSalary;
     int employeeAge;
     String contactNumber;
 

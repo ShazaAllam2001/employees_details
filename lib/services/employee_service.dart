@@ -11,9 +11,11 @@ class EmployeeService {
     List<Employee> employees = [];
     try {
       final response = await Dio().get(endpoint);
-      final data = response.data;
-      debugPrint(data);
-      employees = data.map((obj) => Employee.fromJson(obj)).toList();
+      debugPrint(response.data);
+      final data = jsonDecode(response.data);
+      data.forEach((obj) => 
+        employees.add(Employee.fromJson(obj))
+      );
     }
     catch(e) {
       debugPrint(e.toString());
@@ -25,9 +27,7 @@ class EmployeeService {
     String employeesData = "";
     try {
       final response = await Dio().get(endpoint);
-      final data = response.data;
-      employeesData = jsonEncode(data);
-      debugPrint(data);
+      employeesData = response.data;
     }
     catch(e) {
       debugPrint(e.toString());

@@ -15,6 +15,12 @@ class _EmpDetailsState extends State<EmpDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          }, 
+          icon: Icon(Icons.arrow_back)
+        ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.empData.employeeName),
       ),

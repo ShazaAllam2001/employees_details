@@ -27,11 +27,26 @@ class _EmpDetailsState extends State<EmpDetails> {
       body: Center(
         child: Column(
           children: [
-            Text("Employee ID ${widget.empData.id}"),
-            Text("Employee Name ${widget.empData.employeeName}"),
-            Text("Employee Age ${widget.empData.employeeAge}"),
-            Text("Employee Salary ${widget.empData.employeeSalary}"),
-            Text("Employee Contact Number ${widget.empData.contactNumber}"),
+            Text(
+              "Employee ID  ${widget.empData.id}",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+            ),
+            Text(
+              "Employee Name  ${widget.empData.employeeName}",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+            ),
+            Text(
+              "Employee Age  ${widget.empData.employeeAge}",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+            ),
+            Text(
+              "Employee Salary  ${widget.empData.employeeSalary}",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+            ),
+            Text(
+              "Employee Contact Number  ${widget.empData.contactNumber}",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+            ),
           ],
         )
       ),

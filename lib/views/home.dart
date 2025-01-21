@@ -64,8 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   leading: Icon(Icons.person),
                   title: Column(
                     children: [
-                      Text("Name : ${employees[index].employeeName}"),
-                      Text("Salary : ${employees[index].employeeSalary}")
+                      Text(
+                        "Name : ${employees[index].employeeName}",
+                        style: TextStyle(fontWeight: FontWeight.bold)
+                      ),
+                      Text(
+                        "Salary : ${employees[index].employeeSalary}",
+                        style: TextStyle(fontWeight: FontWeight.bold)
+                      )
                     ],
                   ),
                 ),

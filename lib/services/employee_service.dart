@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:employees_details/models/employee.dart';
@@ -11,8 +9,7 @@ class EmployeeService {
     List<Employee> employees = [];
     try {
       final response = await Dio().get(endpoint);
-      debugPrint(response.data);
-      final data = jsonDecode(response.data);
+      final data = response.data;
       data.forEach((obj) => 
         employees.add(Employee.fromJson(obj))
       );
